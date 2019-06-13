@@ -48,8 +48,9 @@ class DateAdvert(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Дата"
-        verbose_name_plural = "Даты"
+        verbose_name = "Срок"
+        verbose_name_plural = "Сроки"
+        ordering = ["id"]
 
 class Advert(models.Model):
     """Объявления"""
