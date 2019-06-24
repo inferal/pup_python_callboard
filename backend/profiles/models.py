@@ -37,7 +37,7 @@ class Profile(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
     """Создание профиля пользователя при регистрации"""
     if created:
-        Profile.objects.create(user=instance) #id=instance.id
+        Profile.objects.create(user=instance)
 
 @receiver
 def save_user_profile(sender, instance, **kwargs):
