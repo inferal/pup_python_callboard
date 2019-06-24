@@ -15,13 +15,19 @@ class Profile(models.Model):
     phone = models.CharField("Телефон", max_length=25)
     first_name = models.CharField("Имя", max_length=50)
     last_name = models.CharField("Фамилия", max_length=50, blank=True, null=True)
+    slug = models.SlugField("URL", max_length=50, default='')
     #TODO: Адрес, гео база
 
     def __str__(self):
         return self.first_name
 
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+    #     self.slug = "{}{}".format(self.user_id, self.first_name)
+
+
     # def get_absolute_url(self):
-    #     return reverse()
+    #     return reverse("profile-detail", kwargs={"slug": self.user.username})
 
     class Meta:
         verbose_name = "Профиль"
